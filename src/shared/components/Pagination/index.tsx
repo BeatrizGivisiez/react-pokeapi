@@ -1,28 +1,19 @@
 import React, { FC } from "react";
-import { Box, Button, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Pagination } from "@mui/material";
 
-import { useStyles } from "./styles";
-
-export const Pagination: FC = () => {
-  const classes = useStyles();
-
+export const AppPagination: FC = () => {
   return (
     <>
       <Box
         sx={{
           bgcolor: "background.paper",
-          pt: 8,
-          pb: 6,
+          pt: 4,
+          pb: 4,
         }}
       >
         <Container maxWidth="sm">
           <Stack direction="row" spacing={2} justifyContent="center">
-            <Button className={classes.pagination__button} variant="outlined">
-              Previous
-            </Button>
-            <Button className={classes.pagination__button} variant="contained">
-              Next
-            </Button>
+            <Pagination count={5} color="primary" />
           </Stack>
         </Container>
       </Box>

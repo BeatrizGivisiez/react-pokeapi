@@ -16,8 +16,8 @@ export const PokemonTheme = createTheme({
       contrastText: "#ffffff",
     },
     background: {
-      default: "#F2F2F2",
-      paper: "#ffffff",
+      default: "#ffffff",
+      paper: "#F1F1F1",
     },
   },
 });

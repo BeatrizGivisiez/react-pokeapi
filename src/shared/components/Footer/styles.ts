@@ -3,10 +3,15 @@ import { makeStyles, createStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    pagination__button: {
+    footer__list: {
       display: "flex",
-      alignItems: "center",
-      height: "50px",
+      alignItem: "center",
+      justifyContent: "center",
+    },
+    footer__item: {
+      flexDirection: "column",
+      padding: "0px",
+      gap: "3rem",
     },
   })
 );

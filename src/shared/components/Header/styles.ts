@@ -3,10 +3,16 @@ import { makeStyles, createStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    header__image: {
+    header__toolbar: {
       display: "flex",
       alignItems: "center",
-      height: "50px",
+      justifyContent: "space-between",
+    },
+    header__image: {
+      height: "3rem",
+    },
+    header__logo: {
+      alignItems: "center",
     },
   })
 );
