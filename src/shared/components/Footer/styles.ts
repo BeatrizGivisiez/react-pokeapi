@@ -3,6 +3,13 @@ import { makeStyles, createStyles } from "@mui/styles";
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    footer: {
+      width: "100%",
+      position: "static",
+      bottom: "0",
+      left: "0",
+      textAlign: "center",
+    },
     footer__list: {
       display: "flex",
       alignItem: "center",

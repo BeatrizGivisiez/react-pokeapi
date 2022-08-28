@@ -8,7 +8,7 @@ export const Footer: FC = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <footer className={classes.footer}>
       <Box
         sx={{
           bgcolor: "background.paper",
@@ -45,6 +45,6 @@ export const Footer: FC = () => {
           </ListItem>
         </List>
       </Box>
-    </>
+    </footer>
   );
 };
