@@ -1,16 +1,15 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import React, { FC } from "react";
+import { AppBar, Box, Toolbar, CssBaseline } from "@mui/material";
 
 import logoPokemon from "../../assets/logo.png";
 import { useStyles } from "./styles";
 
-export default function Header() {
+export const Header: FC = () => {
   const classes = useStyles();
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <>
+      <CssBaseline />
+      <AppBar position="relative">
         <Toolbar>
           <Box
             component="img"
@@ -20,6 +19,6 @@ export default function Header() {
           />
         </Toolbar>
       </AppBar>
-    </Box>
+    </>
   );
-}
+};
