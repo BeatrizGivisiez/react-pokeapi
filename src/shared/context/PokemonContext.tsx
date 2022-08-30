@@ -1,6 +1,10 @@
 import { createContext, ReactNode, useState } from "react";
 import { PokemonDetail } from "../interfaces/pokemon";
 
+/**
+ * This context was created to manage data from the pokeapi
+ */
+
 interface PokemonProviderProps {
   children: ReactNode;
 }
@@ -10,14 +14,16 @@ interface PokemonContextProps {
   handlePokemonData(apiData: PokemonDetail): void;
 }
 
+// context initial value
 const initialValue: PokemonContextProps = {
   pokemonData: {} as PokemonDetail,
   handlePokemonData: () => {},
 };
 
-// Creating context PokemonContext
+// creating context PokemonContext
 export const PokemonContext = createContext(initialValue);
 
+// creating Provider to wrap application
 export const PokemonProvider: React.FC<PokemonProviderProps> = ({
   children,
 }) => {

@@ -17,7 +17,7 @@ interface PokemonCardProps {
 export const PokemonList: React.FC = () => {
   const [pokemons, setPokemons] = useState<PokemonCardProps[]>([]);
   const [page, setPage] = useState<number>(0);
-  const [totalPages, setTotalPages] = useState<number | null>(null);
+  const [totalPages, setTotalPages] = useState<number>(0);
   const classes = useStyles();
 
   useEffect(() => {

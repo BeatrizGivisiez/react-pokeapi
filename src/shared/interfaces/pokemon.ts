@@ -1,3 +1,4 @@
+// interface documentation pokeapi
 export interface PokemonDetail {
   abilities: Ability[];
   base_experience: number;

@@ -26,7 +26,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({ name, url }) => {
       onClick={() => {
         if (pokemonInfo) {
           handlePokemonData(pokemonInfo);
-          navigate("/pokemon");
+          navigate("/details");
         }
       }}
       item

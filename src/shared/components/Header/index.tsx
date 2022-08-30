@@ -19,12 +19,16 @@ export const Header: React.FC = () => {
         <div>
           <Tooltip title="Home">
             <Link className={classes.header__logo} variant="button" href="/">
-              <House size={44} color="#3761A8" />
+              <House size={44} color="#3660A7" />
             </Link>
           </Tooltip>
           <Tooltip title="Favorites">
-            <Link className={classes.header__logo} variant="button" href="/">
-              <Star size={44} color="#3761A8" />
+            <Link
+              className={classes.header__logo}
+              variant="button"
+              href="/favorites"
+            >
+              <Star size={44} color="#3660A7" />
             </Link>
           </Tooltip>
         </div>

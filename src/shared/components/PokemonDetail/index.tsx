@@ -15,9 +15,12 @@ import { Star } from "phosphor-react";
 
 import { useStyles } from "./styles";
 import { PokemonContext } from "../../context/PokemonContext";
+import { PokemonDetail as IPokemonDetail } from "../../interfaces/pokemon";
 
 export const PokemonDetail: React.FC = () => {
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const [favorites, setFavorites] = useState<IPokemonDetail[]>(
+    JSON.parse(localStorage.getItem("@pokefavorite") as any) || []
+  );
   const { pokemonData } = useContext(PokemonContext);
   const navigate = useNavigate();
   const classes = useStyles();
@@ -26,10 +29,14 @@ export const PokemonDetail: React.FC = () => {
     const favoriteList = JSON.parse(
       localStorage.getItem("@pokefavorite") as any
     );
-    if (favoriteList.includes(id)) {
-      favoriteList.pop(id);
+    const pokemonIndex = favoriteList.findIndex(
+      (item: IPokemonDetail) => item.id === id
+    );
+
+    if (pokemonIndex > -1) {
+      favoriteList.splice(pokemonIndex, 1);
     } else {
-      favoriteList.push(id);
+      favoriteList.push(pokemonData);
     }
     localStorage.setItem("@pokefavorite", JSON.stringify(favoriteList));
     setFavorites(favoriteList);
@@ -69,7 +76,13 @@ export const PokemonDetail: React.FC = () => {
                 }}
                 size={40}
                 color="#3761A8"
-                weight={favorites.includes(pokemonData.id) ? "fill" : "regular"}
+                weight={
+                  favorites.findIndex(
+                    (item: IPokemonDetail) => item.id === pokemonData.id
+                  ) > -1
+                    ? "fill"
+                    : "regular"
+                }
               />
             </div>
           </div>
@@ -89,40 +102,40 @@ export const PokemonDetail: React.FC = () => {
               <Box>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[0]?.stat.name}
-                    secondary={pokemonData?.stats[0]?.base_stat}
+                    primary={pokemonData?.stats?.[0].stat?.name}
+                    secondary={pokemonData?.stats?.[0].base_stat}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[1]?.stat.name}
-                    secondary={pokemonData?.stats[1]?.base_stat}
+                    primary={pokemonData?.stats?.[1].stat?.name}
+                    secondary={pokemonData?.stats?.[1].base_stat}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[2]?.stat.name}
-                    secondary={pokemonData?.stats[2]?.base_stat}
+                    primary={pokemonData?.stats?.[2].stat?.name}
+                    secondary={pokemonData?.stats?.[2].base_stat}
                   />
                 </ListItem>
               </Box>
               <Box>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[3]?.stat.name}
-                    secondary={pokemonData?.stats[3]?.base_stat}
+                    primary={pokemonData?.stats?.[3].stat?.name}
+                    secondary={pokemonData?.stats?.[3].base_stat}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[4]?.stat.name}
-                    secondary={pokemonData?.stats[4]?.base_stat}
+                    primary={pokemonData?.stats?.[4].stat?.name}
+                    secondary={pokemonData?.stats?.[4].base_stat}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary={pokemonData?.stats[5]?.stat.name}
-                    secondary={pokemonData?.stats[5]?.base_stat}
+                    primary={pokemonData?.stats?.[5].stat?.name}
+                    secondary={pokemonData?.stats?.[5].base_stat}
                   />
                 </ListItem>
               </Box>

@@ -30,6 +30,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "80%",
       alignItems: "center",
       justifyContent: "center",
+      textTransform: "capitalize",
     },
     containerMenu__icon: {
       display: "flex",
@@ -64,6 +65,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-around",
       marginLeft: "2rem",
       marginRight: "2rem",
+      textTransform: "uppercase",
     },
   })
 );

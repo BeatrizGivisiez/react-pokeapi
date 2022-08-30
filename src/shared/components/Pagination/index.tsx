@@ -8,10 +8,13 @@ import {
 
 interface PaginationProps {
   handlePage: Dispatch<SetStateAction<number>>;
-  totalPages: number | null;
+  totalPages: number;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ handlePage }) => {
+export const Pagination: React.FC<PaginationProps> = ({
+  handlePage,
+  totalPages,
+}) => {
   return (
     <Box
       sx={{
@@ -26,7 +29,7 @@ export const Pagination: React.FC<PaginationProps> = ({ handlePage }) => {
             onChange={(_, page) => {
               handlePage(page - 1);
             }}
-            count={192}
+            count={Number(totalPages.toFixed())}
             color="primary"
           />
         </Stack>
