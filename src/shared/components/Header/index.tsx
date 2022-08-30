@@ -16,10 +16,10 @@ export const Header: React.FC = () => {
           alt="Logo Pokémon"
           src={logoPokemon}
         />
-        <div>
+        <div className={classes.header__icon}>
           <Tooltip title="Home">
             <Link className={classes.header__logo} variant="button" href="/">
-              <House size={44} color="#3660A7" />
+              <House size={34} color="#3660A7" />
             </Link>
           </Tooltip>
           <Tooltip title="Favorites">
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
               variant="button"
               href="/favorites"
             >
-              <Star size={44} color="#3660A7" />
+              <Star size={34} color="#3660A7" />
             </Link>
           </Tooltip>
         </div>

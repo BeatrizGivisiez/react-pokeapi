@@ -67,7 +67,9 @@ export const PokemonDetail: React.FC = () => {
         >
           <div className={classes.pokemonDetail__containerMenu}>
             <div className={classes.containerMenu__name}>
-              <Typography variant="h4">{pokemonData.name}</Typography>
+              <Typography variant="h4" sx={{ fontWeight: 500 }}>
+                {pokemonData.name}
+              </Typography>
             </div>
             <div className={classes.containerMenu__icon}>
               <Star

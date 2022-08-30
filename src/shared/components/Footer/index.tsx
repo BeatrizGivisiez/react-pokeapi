@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
         <ListItem className={classes.footer__item}>
           <Tooltip title="E-mail">
             <Link href="mailto:beatriz.givisiez@hotmail.com" target="_blank">
-              <EnvelopeSimpleOpen size={44} color="#fbc02d" />
+              <EnvelopeSimpleOpen size={44} color="#3660A7" />
             </Link>
           </Tooltip>
         </ListItem>
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
               href="https://www.linkedin.com/in/beatriz-givisiez/"
               target="_blank"
             >
-              <LinkedinLogo size={40} color="#fbc02d" />
+              <LinkedinLogo size={40} color="#3660A7" />
             </Link>
           </Tooltip>
         </ListItem>
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
         <ListItem className={classes.footer__item}>
           <Tooltip title="Github">
             <Link href="https://github.com/BeatrizGivisiez" target="_blank">
-              <GithubLogo size={40} color="#fbc02d" />
+              <GithubLogo size={40} color="#3660A7" />
             </Link>
           </Tooltip>
         </ListItem>

@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       cursor: "pointer",
       "&:hover": {
         background: "#f9f9f9",
+        color: "#3660A7",
       },
     },
     pokemonCard__cardTitle: {
