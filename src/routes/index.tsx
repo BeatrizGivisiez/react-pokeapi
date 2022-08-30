@@ -1,12 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "../pages/home";
-import { Pokemon } from "../pages/pokemon";
+import { Details } from "../pages/details";
+import { Favorites } from "../pages/favorites/Favorites";
 
-export const AppRoutes = () => {
+export const AppRoutes: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/pokemon" element={<Pokemon />} />
+      <Route path="/details" element={<Details />} />
+      <Route path="/favorites" element={<Favorites />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
