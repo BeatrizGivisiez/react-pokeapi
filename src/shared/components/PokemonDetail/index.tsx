@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { useEffect, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   Box,
@@ -13,9 +14,40 @@ import {
 import { Star } from "phosphor-react";
 
 import { useStyles } from "./styles";
+import { PokemonContext } from "../../context/PokemonContext";
 
-export const PokemonDetail: FC = () => {
+export const PokemonDetail: React.FC = () => {
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const { pokemonData } = useContext(PokemonContext);
+  const navigate = useNavigate();
   const classes = useStyles();
+
+  const handleFavorite = (id: number) => {
+    const favoriteList = JSON.parse(
+      localStorage.getItem("@pokefavorite") as any
+    );
+    if (favoriteList.includes(id)) {
+      favoriteList.pop(id);
+    } else {
+      favoriteList.push(id);
+    }
+    localStorage.setItem("@pokefavorite", JSON.stringify(favoriteList));
+    setFavorites(favoriteList);
+  };
+
+  useEffect(() => {
+    if (!localStorage.getItem("@pokefavorite")) {
+      const favoritePokemons: number[] = [];
+      localStorage.setItem("@pokefavorite", JSON.stringify(favoritePokemons));
+      setFavorites([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!pokemonData.name) {
+      navigate("/", { replace: true });
+    }
+  }, []);
 
   return (
     <main className={classes.pokemonDetail}>
@@ -28,10 +60,17 @@ export const PokemonDetail: FC = () => {
         >
           <div className={classes.pokemonDetail__containerMenu}>
             <div className={classes.containerMenu__name}>
-              <Typography variant="h4">Pikachu</Typography>
+              <Typography variant="h4">{pokemonData.name}</Typography>
             </div>
             <div className={classes.containerMenu__icon}>
-              <Star size={40} color="#3761A8" />
+              <Star
+                onClick={() => {
+                  handleFavorite(pokemonData.id);
+                }}
+                size={40}
+                color="#3761A8"
+                weight={favorites.includes(pokemonData.id) ? "fill" : "regular"}
+              />
             </div>
           </div>
 
@@ -40,30 +79,51 @@ export const PokemonDetail: FC = () => {
               <CardMedia
                 className={classes.containerGrid__image}
                 component="img"
-                image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                image={
+                  pokemonData?.sprites?.other?.["official-artwork"]
+                    .front_default
+                }
               />
             </Box>
             <List className={classes.containerGrid__list}>
               <Box>
                 <ListItem>
-                  <ListItemText primary="HP:" secondary="100" />
+                  <ListItemText
+                    primary={pokemonData?.stats[0]?.stat.name}
+                    secondary={pokemonData?.stats[0]?.base_stat}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="ATTACK:" secondary="200" />
+                  <ListItemText
+                    primary={pokemonData?.stats[1]?.stat.name}
+                    secondary={pokemonData?.stats[1]?.base_stat}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="SPEED:" secondary="500" />
+                  <ListItemText
+                    primary={pokemonData?.stats[2]?.stat.name}
+                    secondary={pokemonData?.stats[2]?.base_stat}
+                  />
                 </ListItem>
               </Box>
               <Box>
                 <ListItem>
-                  <ListItemText primary="DEFENSE:" secondary="10" />
+                  <ListItemText
+                    primary={pokemonData?.stats[3]?.stat.name}
+                    secondary={pokemonData?.stats[3]?.base_stat}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="WEIGHT:" secondary="30" />
+                  <ListItemText
+                    primary={pokemonData?.stats[4]?.stat.name}
+                    secondary={pokemonData?.stats[4]?.base_stat}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="WEIGHT:" secondary="30" />
+                  <ListItemText
+                    primary={pokemonData?.stats[5]?.stat.name}
+                    secondary={pokemonData?.stats[5]?.base_stat}
+                  />
                 </ListItem>
               </Box>
             </List>

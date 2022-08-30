@@ -1,16 +1,18 @@
-import React, { FC } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./routes";
 import { PokemonTheme } from "./shared/themes";
 import { ThemeProvider } from "@mui/material";
+import { PokemonProvider } from "./shared/context/PokemonContext";
 
-export const App: FC = () => {
+export const App: React.FC = () => {
   return (
-    //Using pokemon custom theme
-    <ThemeProvider theme={PokemonTheme}>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </ThemeProvider>
+    <PokemonProvider>
+      <ThemeProvider theme={PokemonTheme}>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </ThemeProvider>
+    </PokemonProvider>
   );
 };

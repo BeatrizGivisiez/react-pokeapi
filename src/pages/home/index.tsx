@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 
 import { Header } from "../../shared/components/Header";
 import { PokemonList } from "../../shared/components/PokemonList";
 import { Footer } from "../../shared/components/Footer";
 
-export const Home: FC = () => {
+export const Home: React.FC = () => {
   return (
     <>
       <Header />

@@ -24,6 +24,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "row",
       width: "100%",
+      marginTop: "2rem",
     },
     containerMenu__name: {
       width: "80%",
