@@ -5,9 +5,9 @@ export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     footer: {
       width: "100%",
-      position: "static",
-      bottom: "0",
+      position: "absolute",
       left: "0",
+      bottom: "0",
       textAlign: "center",
     },
     footer__list: {
