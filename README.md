@@ -1,46 +1,85 @@
-# Getting Started with Create React App
+# Frontend Challenge - Bee Engineering
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Small description of the application:
 
-## Available Scripts
+Esse projeto é uma aplicação utilizando React, que consume os serviços https://pokeapi.co/ API RESTful.
+Ela é responsável por listar os Pokémons (nome e imagem) em sua página principal, contendo paginação para ser possível a navegação dos Pokémons.
+Ao clicar no card do Pokémon é enviado para tela de detalhes, que retorna suas caracteristicas, nome, imagem e com funcionalidade de favoritar.
+A aplicação contém uma rota de favoritados, que exibe o nome e imagem correspondentes para cada um deles.
 
-In the project directory, you can run:
+### Technologies used:
 
-### `npm start`
+- [React](https://pt-br.reactjs.org/)
+- [Material UI](https://mui.com/pt/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [Typescript](https://www.typescriptlang.org/)
+- [Router](https://reactrouter.com/)
+- [Phosphor Icons](https://phosphoricons.com/)
+- Hooks
+- Context
+- localStorage
+- Yarn
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Steps of installation:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Clone the directoy
 
-### `npm test`
+```bash
+yarn
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Clone the directoy
 
-### `npm run build`
+```bash
+yarn
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Open http://localhost:3000 with your browser to see the result.
 
-### `npm run eject`
+#### Router
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Homepage: http://localhost:3000
+- Pokemon detail: http://localhost:3000/details
+- Pokemon favotite: http://localhost:3000/favorites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Functional requirements:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. The user should be able to see a main screen with a list of all Pokémons (with
+   corresponding name and image for each of them).
+2. In the main page: apply pagination in the list of Pokémons.
+3. From the main page, while clicking a Pokémon, the user should be able to navigate to
+   another page containing the details of that Pokémon.
+4. In the Pokémon details page, the user should see at least 6 descriptions, the image and
+   the name of one Pokémon.
+5. In the Pokémon detail page, the user should be able to favorite the Pokémon.
+6. From the main page, the user should be able to navigate to another page. This page
+   should contain a list of the favorite Pokémons (with corresponding name and image for each
+   of them).
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Technical requirements:
 
-## Learn More
+7. The application should be implemented in React.
+8. To get the list of Pókemons and their details, use the PokéAPI: https://pokeapi.co/ (see
+   documentation for more details).
+9. Usage of the local storage to handle the list of favorite Pokémons.
+10. Usage of any UI framework adapted to React (Examples: Bootstrap, Semantic UI).
+11. The app should be responsive (adapt UI so it can be displayed in different screen sizes).
+12. The code should contain comments.
+13. The application code should be submitted in GitHub.
+14. On the README file of GitHub, should be mentioned the following information: small
+    description of the application, functional and technical requirements accomplished,
+    technologies used, and the steps of installation.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Plus:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+15. Feel free to apply any UI for all the components.
+16. Feel free to add any extra libraries / frameworks / dependencies.
+17. In React: usage of hooks, state management, router.
+18. Unit tests in functions and components.
