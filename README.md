@@ -2,11 +2,7 @@
 
 ## Small description of the application:
 
-<<<<<<< HEAD
 This project is an application using React, which consumes the https://pokeapi.co/ RESTful API services. She is responsible for listing the Pokémon (name and image) on her main page, containing pagination to be able to browse the Pokémon. By clicking on the Pokémon card, it is sent to the details screen, which returns its characteristics, name, image and with the functionality of favorites. The application contains a favorites route, which displays the corresponding name and image for each one.
-=======
-This project is an application using React, which consumes the https://pokeapi.co/ RESTful API services. It is responsible for listing the Pokémon (name and image) in the main page, containing pagination to be able to browse the Pokémon. By clicking on the Pokémon card, it is sent to the details screen, which returns its characteristics, name, image and with the functionality of favorites. The application contains a favorites route, which displays the corresponding name and image for each one.
->>>>>>> 0c61223d985872f4ca6529dbcbec2156c7085046
 
 ### Technologies used:
 
