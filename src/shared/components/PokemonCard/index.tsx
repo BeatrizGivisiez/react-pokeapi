@@ -17,6 +17,7 @@ export const PokemonCard: React.FC<PokemonCardProps> = ({ name, url }) => {
   const navigate = useNavigate();
   const classes = useStyles();
 
+  // get Pokemon details from api
   useEffect(() => {
     axios.get(url).then((response) => setpokemonInfo(response.data));
   }, []);

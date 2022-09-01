@@ -20,10 +20,12 @@ export const PokemonList: React.FC = () => {
   const [totalPages, setTotalPages] = useState<number>(0);
   const classes = useStyles();
 
+  // request Pokemon list from api
   useEffect(() => {
     api.get(getPokemonList(page)).then((response) => {
       setPokemons(response.data.results);
-      if (!totalPages) {
+      // set total pages in pagination according to api results
+      if (totalPages === 0) {
         setTotalPages(response.data.count / API_LIST_LIMIT);
       }
     });

@@ -25,6 +25,7 @@ export const PokemonDetail: React.FC = () => {
   const navigate = useNavigate();
   const classes = useStyles();
 
+  // storing favorite Pokemon in localStorage
   const handleFavorite = (id: number) => {
     const favoriteList = JSON.parse(
       localStorage.getItem("@pokefavorite") as any
@@ -32,7 +33,6 @@ export const PokemonDetail: React.FC = () => {
     const pokemonIndex = favoriteList.findIndex(
       (item: IPokemonDetail) => item.id === id
     );
-
     if (pokemonIndex > -1) {
       favoriteList.splice(pokemonIndex, 1);
     } else {
@@ -42,6 +42,7 @@ export const PokemonDetail: React.FC = () => {
     setFavorites(favoriteList);
   };
 
+  // create localStorage key if it doesn't exist
   useEffect(() => {
     if (!localStorage.getItem("@pokefavorite")) {
       const favoritePokemons: number[] = [];
@@ -50,6 +51,7 @@ export const PokemonDetail: React.FC = () => {
     }
   }, []);
 
+  // if user accesses the route without selecting a Pokemon, navigates to "/"
   useEffect(() => {
     if (!pokemonData.name) {
       navigate("/", { replace: true });

@@ -2,10 +2,7 @@
 
 ## Small description of the application:
 
-Esse projeto é uma aplicação utilizando React, que consume os serviços https://pokeapi.co/ API RESTful.
-Ela é responsável por listar os Pokémons (nome e imagem) em sua página principal, contendo paginação para ser possível a navegação dos Pokémons.
-Ao clicar no card do Pokémon é enviado para tela de detalhes, que retorna suas caracteristicas, nome, imagem e com funcionalidade de favoritar.
-A aplicação contém uma rota de favoritados, que exibe o nome e imagem correspondentes para cada um deles.
+This project is an application using React, which consumes the https://pokeapi.co/ RESTful API services. She is responsible for listing the Pokémon (name and image) on her main page, containing pagination to be able to browse the Pokémon. By clicking on the Pokémon card, it is sent to the details screen, which returns its characteristics, name, image and with the functionality of favorites. The application contains a favorites route, which displays the corresponding name and image for each one.
 
 ### Technologies used:
 
@@ -15,10 +12,6 @@ A aplicação contém uma rota de favoritados, que exibe o nome e imagem corresp
 - [Typescript](https://www.typescriptlang.org/)
 - [Router](https://reactrouter.com/)
 - [Phosphor Icons](https://phosphoricons.com/)
-- Hooks
-- Context
-- localStorage
-- Yarn
 
 ### Steps of installation:
 
