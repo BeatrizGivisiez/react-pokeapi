@@ -18,8 +18,7 @@ This project is an application using React, which consumes the https://pokeapi.c
 #### Clone the directoy
 
 ```bash
-yarn
-yarn start
+https://github.com/BeatrizGivisiez/react-pokeapi
 ```
 
 #### Clone the directoy
